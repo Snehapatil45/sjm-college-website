@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import About from './pages/about';
 import Grievience from './pages/grevience';
@@ -10,19 +10,16 @@ import "./pages/SJM.css";
 function App() {
   return (
     <div>
-      <BrowserRouter future={{ v7_startTransition: true,v7_relativeSplatPath: true }}>
-           <Routes>
-           <Route path="*" element={<Nopage/>}/>
-              <Route index element={<Home/>}/>
-              <Route path="/home" element={<Home/>}/>
-              <Route path="/about" element={<About/>}/>
-              <Route path="/grevience" element={<Grievience/>}/>
-              <Route path="/admission" element={<Admission/>}/>
-              <Route path="/alumini" element={<Alumini/>}/>
-           </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/grevience" element={<Grievience />} />
+        <Route path="/admission" element={<Admission />} />
+        <Route path="/alumini" element={<Alumini />} />
+        <Route path="*" element={<Nopage />} /> {/* Always last */}
+      </Routes>
     </div>
-    
-  )
+  );
 }
+
 export default App;
